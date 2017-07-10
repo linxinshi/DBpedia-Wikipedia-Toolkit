@@ -2,7 +2,7 @@ command: python extract_label.py FILENAME
 
 A label is actually the corresponding wikipedia article name of a DBpedia uri  
   
-input: DBpedia labels dataset (in ttl triplet format)
+input: DBpedia labels dataset (in ttl triplet format)  
 output: pair (DBpedia_uri, label) for each line in the ttl file
 
 by default results will be stored in a mongoDB collection
