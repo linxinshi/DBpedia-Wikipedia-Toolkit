@@ -51,7 +51,7 @@ def main():
              categories='|'.join(uri_cat[uri])
         
              if DEBUG_MODE==True:
-                print 'uri=%s\tcategories=%s'%(uri,categories)
+                print '%s\t%s'%(uri,categories)
              if MONGO_MODE==True:
                 bulk.insert({'uri':uri,'categories':categories})
                 
