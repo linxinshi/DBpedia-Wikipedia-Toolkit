@@ -1,6 +1,6 @@
 command: python extract_article_categories.py FILENAME  
   
-input: DBpedia labels dataset (in ttl triplet format)  
+input: DBpedia article categories dataset (in ttl triplet format)  
 output: pair (DBpedia_uri, categories) for each line in the ttl file  
   
 by default results will be stored in a mongoDB collection  
