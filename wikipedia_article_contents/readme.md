@@ -1,0 +1,13 @@
+#usage
+python extract_wikipedia_article_contents.py FILENAME  
+#input
+Wikipedia dump (enwiki-xxxx-pages-articles.xml)
+#output
+label(Wikipedia article title), page_id, content (seperated by tab)
+#behaviour
+by default results will be stored into a mongoDB collection  
+#parameters
+set DEBUG_MODE=True if you want to output results to the console  
+set MONGO_MODE=True if you want to store results into mongoDB
+#notice
+Wikipedia dump is huge, the program may consumme a lot of computing resources 
