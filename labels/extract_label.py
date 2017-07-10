@@ -44,7 +44,7 @@ def main():
              label=extractID(list_item[2].strip())
              
              if DEBUG_MODE==True:
-                print 'uri=%s\tlabel=%s'%(dbpedia_uri,label)
+                print '%s\t%s'%(dbpedia_uri,label)
              if MONGO_MODE==True:
                 bulk.insert({'uri':dbpedia_uri,'label':label})
                 
