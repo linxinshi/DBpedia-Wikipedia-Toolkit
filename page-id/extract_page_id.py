@@ -3,6 +3,7 @@ import pymongo
 import string
 
 DEBUG_MODE=False
+MONGO_MODE=True
 
 def extractID(line):
     h=line.find('"')
@@ -19,10 +20,11 @@ def main():
        quit()
 
     # create mongoDB connection
-    client = pymongo.MongoClient("localhost",27017)
-    db = client.wiki2015
-    table_connection=db['page_id']   
-    bulk = table_connection.initialize_ordered_bulk_op()
+    if MONGO_MODE==True:
+       client = pymongo.MongoClient("localhost",27017)
+       db = client.wiki2015
+       table_connection=db['page_id']   
+       bulk = table_connection.initialize_ordered_bulk_op()
     
     # create file object
     filename=sys.argv[1]
@@ -30,18 +32,25 @@ def main():
     
     with open(filename,'r') as src:
          lines=src.readlines()
+         
          for line in lines:
              if line.startswith('#')==True:
                 continue
+                
              list_item=line.strip().split()
              dbpedia_uri=list_item[0]
              wiki_id=extractID(list_item[2])
+             
              if DEBUG_MODE==True:
                 print 'uri=%s\tID=%s'%(dbpedia_uri,wikiID)
-             bulk.insert({'uri':dbpedia_uri,'wiki_id':wiki_id})
-         bulk.execute()
-    
-    client.close()
+             if MONGO_MODE==True:
+                bulk.insert({'uri':dbpedia_uri,'wiki_id':wiki_id})
+                
+         if MONGO_MODE==True:
+            bulk.execute()
+            
+    if MONGO_MODE==True:
+       client.close()
 
 if __name__ == '__main__':
    reload(sys)
