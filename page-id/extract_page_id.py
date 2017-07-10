@@ -1,9 +1,11 @@
 import sys
-import pymongo
 import string
 
 DEBUG_MODE=False
 MONGO_MODE=True
+
+if MONGO_MODE==True:
+   import pymongo
 
 def extractID(line):
     h=line.find('"')
