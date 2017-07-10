@@ -44,7 +44,7 @@ def main():
              wiki_id=extractID(list_item[2])
              
              if DEBUG_MODE==True:
-                print 'uri=%s\tID=%s'%(dbpedia_uri,wikiID)
+                print '%s\t%s'%(dbpedia_uri,wikiID)
              if MONGO_MODE==True:
                 bulk.insert({'uri':dbpedia_uri,'wiki_id':wiki_id})
                 
