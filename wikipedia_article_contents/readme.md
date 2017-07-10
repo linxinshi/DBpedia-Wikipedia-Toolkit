@@ -1,9 +1,14 @@
 # usage
 python extract_wikipedia_article_contents.py FILENAME  
+# package
+gensim
+
 # input
 Wikipedia dump (enwiki-xxxx-pages-articles.xml)
 # output
-label(Wikipedia article title), page_id, content (seperated by tab)
+label(Wikipedia article title), page_id, content (seperated by tab)  
+please notice punctuation,markup,templates in a Wikipedia article are removed
+
 # behaviour
 by default results will be stored into a mongoDB collection  
 # parameters
