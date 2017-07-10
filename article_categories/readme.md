@@ -11,4 +11,4 @@ Set MONGO_MODE=True if you want to store results into a mongoDB collection (requ
 works fine for DBpedia 2015-10 english version  
   
 SAMPLE OUTPUT(seperated by tab delimiter)  
-<http://dbpedia.org/resource/Animalia_(book)>	Children's_picture_books|Alphabet_books|1986_books|Picture_books_by_Graeme_Base|Puzzle_books
+uri=<http://dbpedia.org/resource/A>	categories=ISO_basic_Latin_letters|Vowel_letters  
