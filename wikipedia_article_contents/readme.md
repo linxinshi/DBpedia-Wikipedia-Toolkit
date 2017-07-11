@@ -15,4 +15,4 @@ by default results will be stored into a mongoDB collection
 set DEBUG_MODE=True if you want to output results to the console  
 set MONGO_MODE=True if you want to store results into mongoDB
 # notice
-Wikipedia dump is huge, the program may consumme a lot of computing resources 
+Wikipedia dump is huge, the program may consume a lot of computing resources 
